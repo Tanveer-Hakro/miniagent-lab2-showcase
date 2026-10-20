@@ -1,0 +1,23 @@
+digraph MiniAgent {
+  graph [rankdir=LR, pad="0.22", nodesep="0.48", ranksep="0.8", bgcolor="white", splines=polyline, outputorder=edgesfirst];
+  node [shape=box, style="rounded,filled", fontname="DejaVu Sans", fontsize=12, margin="0.24,0.16", color="#C8D1DA", fillcolor="#F5F7FA", fontcolor="#24313F", penwidth=1.2];
+  edge [color="#64748B", penwidth=1.6, arrowsize=0.7, fontname="DejaVu Sans", fontsize=10, fontcolor="#485767"];
+  task [label="CLI task"];
+  loop [label="Agent loop\n(max-steps)", color="#3569A5", fillcolor="#EEF3F9"];
+  provider [label="Model provider\nchat(messages)"];
+  action [label="JSON action\n{tool, args}"];
+  validation [label="Tool validation"];
+  executor [label="Execute tool\nread / write / bash"];
+  feedback [label="Tool result\n→ next messages", color="#3569A5", fillcolor="#EEF3F9"];
+  approval [label="Write approval\n(y / n)", fillcolor="#FFF7ED", color="#D5AA77"];
+  log [label="JSONL audit", fillcolor="#FFFFFF"];
+  finish [label="finish / stop", fillcolor="#FFFFFF"];
+  task -> loop -> provider -> action -> validation;
+  validation -> executor [label="read / run"];
+  validation -> approval [label="write"];
+  approval -> executor [label="approved"];
+  executor -> feedback;
+  feedback -> log [style=dashed, color="#94A3B8", arrowsize=0.5];
+  feedback -> loop [constraint=false, color="#3569A5", label="next turn", penwidth=2.0];
+  action -> finish [label="finish", color="#64748B"];
+}

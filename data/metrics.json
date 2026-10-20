@@ -1,0 +1,25 @@
+{
+  "source_note": "Observed completed project verification output; not a CI job in this repository.",
+  "acceptance_checks": {
+    "maximum": 11,
+    "variant_A": 11,
+    "variant_B": 11
+  },
+  "agent_turns": {
+    "variant_A": 8,
+    "variant_B": 7
+  },
+  "matrix_checks": {
+    "maximum": 5,
+    "layer_0": 5,
+    "layer_5": 5
+  },
+  "feedback_disabled_actions": {
+    "read_file": 12,
+    "write_file": 0,
+    "run_bash": 0,
+    "finish": 0
+  },
+  "feedback_disabled_terminated_by_step_budget": true,
+  "feedback_disabled_matrix_created": false
+}

@@ -1,0 +1,14 @@
+REPOSITORY NAME
+miniagent-lab2-showcase
+
+GITHUB DESCRIPTION (paste into the Description field)
+A Python MiniAgent showcase: structured tool calling, file operations, human-approved writes, JSONL audit logs, and autonomous 3D matrix verification. Both test variants passed 11/11 checks.
+
+SUGGESTED TOPICS
+python, ai-agents, llm, tool-calling, agent-architecture, json, ollama, automation, human-in-the-loop, visualization, coding-agent
+
+README
+README.md (automatically displayed by GitHub)
+
+CONTENT SCOPE
+Lab 2 only. Public architecture and observed evaluation metrics; no private source code, API keys, personal identifiers, or assignment submission.
